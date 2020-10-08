@@ -11,6 +11,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
+    - run: cd common && npm ci && npm run build
     - run: cd backend && npm ci
     - run: cd backend && npm run build
 
@@ -22,5 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+      - run: cd common && npm ci && npm run build
       - run: cd frontend && npm ci
       - run: cd frontend && npm run build
