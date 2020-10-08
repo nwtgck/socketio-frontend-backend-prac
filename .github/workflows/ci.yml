@@ -5,14 +5,22 @@ on: [push, pull_request]
 jobs:
   backend_build:
     runs-on: ubuntu-18.04
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 12.x
     - run: cd backend && npm ci
     - run: cd backend && npm run build
+
+  frontend_build:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - run: cd frontend && npm ci
+      - run: cd frontend && npm run build
