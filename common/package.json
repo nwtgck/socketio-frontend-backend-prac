@@ -1,6 +1,5 @@
 {
   "name": "common",
-  "version": "0.1.0-SNAPSHOT",
   "description": "common",
   "private": true,
   "main": "dist/src/index.js",
