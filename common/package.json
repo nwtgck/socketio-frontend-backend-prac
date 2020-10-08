@@ -1,0 +1,23 @@
+{
+  "name": "common",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "common",
+  "private": true,
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "tsc-watch"
+  },
+  "author": "Ryo Ota <nwtgck@nwtgck.org> (https://github.com/nwtgck)",
+  "license": "MIT",
+  "devDependencies": {
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "fp-ts": "^2.8.3",
+    "io-ts": "^2.2.11"
+  }
+}
