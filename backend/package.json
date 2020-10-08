@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "0.1.0-SNAPSHOT",
+  "description": "backend",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/src/index.js",
+    "prepare": "npm run build",
+    "test": "mocha --require ts-node/register test/**/*.ts"
+  },
+  "author": "Ryo Ota <nwtgck@nwtgck.org> (https://github.com/nwtgck)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^14.11.5",
+    "@types/power-assert": "^1.5.3",
+    "@types/socket.io": "^2.1.11",
+    "mocha": "^7.2.0",
+    "power-assert": "^1.6.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  }
+}
