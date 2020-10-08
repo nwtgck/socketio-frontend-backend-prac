@@ -43,6 +43,10 @@ export default class Chat extends Vue {
       name: this.roomName,
     }
     socket.emit(events.join_room, req);
+    socket.on('reconnect', () => {
+      socket.emit(events.join_room, req);
+      console.log('reconnected');
+    });
 
     socket.on(events.receive_talk, (data: unknown) => {
       const talkEither = talkType.decode(data);
