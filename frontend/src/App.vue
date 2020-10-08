@@ -1,36 +1,19 @@
 <template>
   <div id="app">
+    <chat />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
-import * as socketioClient from 'socket.io-client'
+import Chat from '@/components/Chat.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    Chat,
   },
 })
-export default class App extends Vue {
-  mounted() {
-    const endpoint = 'http://localhost:3000';
-    const socket = socketioClient.connect(endpoint);
-
-    socket.on('connect', () => {
-      console.log('on connect');
-    });
-
-    socket.on('event', (data: any) => {
-      console.log(`on event: ${data}`);
-    });
-
-    socket.on('disconnect', () => {
-
-    });
-  }
-}
+export default class App extends Vue {}
 </script>
 
 <style>
